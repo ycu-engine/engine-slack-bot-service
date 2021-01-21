@@ -1,4 +1,4 @@
-service: serverless-bolt-js
+service: engine-slack-bot-service
 frameworkVersion: '2'
 provider:
   name: aws
