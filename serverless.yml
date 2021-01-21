@@ -1,0 +1,23 @@
+service: serverless-bolt-js
+frameworkVersion: '2'
+provider:
+  name: aws
+  runtime: nodejs12.x
+  profile: ${opt:profile, self:custom.defaultProfile}
+  environment:
+    SLACK_SIGNING_SECRET: ${env:SLACK_SIGNING_SECRET}
+    SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
+functions:
+  slack:
+    handler: src/app.handler
+    events:
+      - http:
+          path: slack/events
+          method: post
+custom:
+  defaultProfile: default
+  webpackIncludeModules: true
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-dotenv-plugin
