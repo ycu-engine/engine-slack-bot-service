@@ -5,6 +5,7 @@ provider:
   runtime: nodejs12.x
   environment:
     SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
+    SLACK_SIGNING_SECRET: ${env:SLACK_SIGNING_SECRET}
 functions:
   slack:
     handler: src/app.handler
