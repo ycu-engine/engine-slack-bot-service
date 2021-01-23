@@ -1,4 +1,8 @@
 import {
+  GenericMessageEvent,
+  MessageEvent
+} from '@slack/bolt/dist/types/events/message-events'
+import {
   ChatPostMessageArguments,
   ConversationsMembersArguments,
   ReactionsAddArguments,
@@ -30,4 +34,10 @@ export const postMessage = async (options: ChatPostMessageArguments) => {
 
 export const reactionsAdd = async (options: ReactionsAddArguments) => {
   await client.reactions.add(options)
+}
+
+export const messageEventIsGenericMessageEvent = (
+  event: MessageEvent
+): event is GenericMessageEvent => {
+  return typeof event.subtype === 'undefined'
 }
