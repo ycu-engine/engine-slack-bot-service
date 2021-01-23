@@ -19,7 +19,6 @@
     "@types/aws-serverless-express": "^3.3.3",
     "@types/node": "^14.14.22",
     "serverless": "^2.20.0",
-    "serverless-dotenv-plugin": "^3.1.0",
     "serverless-offline": "^6.8.0",
     "serverless-webpack": "^5.3.5",
     "ts-loader": "^8.0.14",
