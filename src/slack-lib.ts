@@ -1,6 +1,7 @@
 import {
   ChatPostMessageArguments,
   ConversationsMembersArguments,
+  ReactionsAddArguments,
   WebClient
 } from '@slack/web-api'
 import { CHANNELS } from './config'
@@ -25,4 +26,8 @@ export const getMembers = async (options: ConversationsMembersArguments) => {
 
 export const postMessage = async (options: ChatPostMessageArguments) => {
   await client.chat.postMessage(options)
+}
+
+export const reactionsAdd = async (options: ReactionsAddArguments) => {
+  await client.reactions.add(options)
 }
