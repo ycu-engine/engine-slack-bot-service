@@ -29,11 +29,11 @@ export const getMembers = async (options: ConversationsMembersArguments) => {
 }
 
 export const postMessage = async (options: ChatPostMessageArguments) => {
-  await client.chat.postMessage(options)
+  return await client.chat.postMessage(options)
 }
 
 export const reactionsAdd = async (options: ReactionsAddArguments) => {
-  await client.reactions.add(options)
+  return await client.reactions.add(options)
 }
 
 export const messageEventIsGenericMessageEvent = (
