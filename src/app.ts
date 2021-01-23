@@ -30,17 +30,17 @@ export const handler = (event: APIGatewayEvent, context: Context) => {
  * 自己紹介で発言したユーザーにリプで歓迎する。
  */
 app.message(async ({ event }) => {
-  if (event.channel !== CHANNELS.SELF_INTRODUCTION) return
+  if (event.channel !== CHANNELS.BOT) return
   if (!messageEventIsGenericMessageEvent(event)) return
 
   const res = await Promise.all([
     reactionsAdd({
-      channel: CHANNELS.SELF_INTRODUCTION,
+      channel: CHANNELS.BOT,
       name: 'クラッカー',
       timestamp: event.ts
     }),
     postMessage({
-      channel: CHANNELS.SELF_INTRODUCTION,
+      channel: CHANNELS.BOT,
       text: 'Engineへようこそ！:tada:',
       thread_ts: event.ts
     })
@@ -50,4 +50,24 @@ app.message(async ({ event }) => {
     event,
     res
   })
+  //   if (event.channel !== CHANNELS.SELF_INTRODUCTION) return
+  //   if (!messageEventIsGenericMessageEvent(event)) return
+
+  //   const res = await Promise.all([
+  //     reactionsAdd({
+  //       channel: CHANNELS.SELF_INTRODUCTION,
+  //       name: 'クラッカー',
+  //       timestamp: event.ts
+  //     }),
+  //     postMessage({
+  //       channel: CHANNELS.SELF_INTRODUCTION,
+  //       text: 'Engineへようこそ！:tada:',
+  //       thread_ts: event.ts
+  //     })
+  //   ])
+
+  //   console.dir({
+  //     event,
+  //     res
+  //   })
 })
