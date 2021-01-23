@@ -7,7 +7,7 @@ provider:
     SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
 functions:
   slack:
-    handler: src/app/handler
+    handler: src/app.handler
     events:
       - http:
           path: slack/events
