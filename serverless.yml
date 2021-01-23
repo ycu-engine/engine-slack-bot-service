@@ -3,7 +3,6 @@ frameworkVersion: '2'
 provider:
   name: aws
   runtime: nodejs12.x
-  profile: ${opt:profile, self:custom.defaultProfile}
   environment:
     SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
 functions:
@@ -12,9 +11,7 @@ functions:
     events:
       - schedule: cron(0 22 ? * SAT *)
 custom:
-  defaultProfile: default
   webpackIncludeModules: true
-  useDotenv: true
 plugins:
   - serverless-webpack
   - serverless-offline
