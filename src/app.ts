@@ -32,7 +32,8 @@ export const handler = (event: APIGatewayEvent, context: Context) => {
 app.message(async ({ event }) => {
   if (event.channel !== CHANNELS.SELF_INTRODUCTION) return
   if (!messageEventIsGenericMessageEvent(event)) return
-  await Promise.all([
+
+  const res = await Promise.all([
     reactionsAdd({
       channel: CHANNELS.SELF_INTRODUCTION,
       name: 'クラッカー',
@@ -44,4 +45,9 @@ app.message(async ({ event }) => {
       thread_ts: event.ts
     })
   ])
+
+  console.dir({
+    event,
+    res
+  })
 })
