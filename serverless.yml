@@ -16,7 +16,7 @@ functions:
   pick-begginer-leader:
     handler: src/pick-begginer-leader.handler
     events:
-      - schedule: cron(0 22 ? * SAT *)
+      - schedule: cron(0 22 ? * SUN *)
 custom:
   webpackIncludeModules: true
 plugins:
