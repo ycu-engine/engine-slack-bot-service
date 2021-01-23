@@ -36,7 +36,7 @@ app.message(async ({ event }) => {
   const res = await Promise.all([
     reactionsAdd({
       channel: CHANNELS.BOT,
-      name: 'クラッカー',
+      name: 'tada',
       timestamp: event.ts
     }),
     postMessage({

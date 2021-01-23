@@ -3,4 +3,4 @@ export const CHANNELS = {
   BEGGINER: 'C01JL8VFDCK',
   BOT: 'C01JQB5MVPF',
   SELF_INTRODUCTION: 'C01JW5C7U3B'
-}
+} as const
