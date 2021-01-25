@@ -1,3 +1,4 @@
+export const BOT_USER_ID = 'U01KSR3SVR7'
 export const BEGGINER_LEADER = 'U01CX9XGV61'
 export const CHANNELS = {
   BEGGINER: 'C01JL8VFDCK',
